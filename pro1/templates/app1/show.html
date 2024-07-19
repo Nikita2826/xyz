@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>show</title>
+{% endblock %}
+
+{% block content %}
+<h1>Person Record</h1>
+<table class="table table-dark table-striped">
+    <thead>
+    <tr>
+        <th>Pid</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Birth Date</th>
+        <th>Adhar</th>
+        <th>Pancard</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in person %}
+    <tr>
+        <td>{{i.Pid}}</td>
+        <td>{{i.Name}}</td>
+        <td>{{i.City}}</td>
+        <td>{{i.Birth_date}}</td>
+        <td>{{i.Adhar_no}}</td>
+        <td>{{i.Pancard_no}}</td>
+        <td><a href="/a1/uv/{{i.Pid}}"><button class="btn btn-success col-6">Update</button></a>
+            <a href="/a1/dv/{{i.Pid}}"><button class="btn btn-danger col-6 float-end">Delete</button></a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
